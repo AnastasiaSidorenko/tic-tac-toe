@@ -100,10 +100,9 @@ class Controller {
       this.history_list.appendChild(li);
    }
 
-   restartGame = () {
+   restartGame() {
       //this.currentGame = new Game(this.gameNumber + 1, winner, restart_button);
-      console.log("pass restart_button", this.restart_button);
-      this.currentGame = new Game(this.restart_button);
+      this.currentGame = new Game();
       this.hideRestartButton();
       this.init();
    }
