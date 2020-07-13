@@ -47,6 +47,10 @@ body {
    margin: 20px 0;
 }
 
+#history__list {
+   font-size: 17px;
+}
+
 .board-container{
    height:200px;
 }
@@ -74,8 +78,8 @@ body {
    outline: none;
  }
 
- .submit_button {
-   display:block;
+ #restart_button {
+   /*display:block;*/
    background-color: darkcyan;
    width: 180px;
    height: 39px;

@@ -32,15 +32,20 @@
                   <button class="square" id="8"></button>
                </div>
             </div>
-            <button class="submit_button">Сыграть еще</button>
+            <button id="restart_button" style="display:none;">Сыграть еще</button>
          </div>
 
          <div class="main-info">
             <div class="final_count final_count__title">Итоговый счет <div class="final_count__values">
-                  <span class="user_count">0</span>
-                  : <span class="system_count">0</span></div> (Вы - Компьютер)
+                  <span id="user_count">0</span>
+                  : <span id="system_count">0</span></div> (Вы - Компьютер)
             </div>
             <div class="history">История игр</div>
+            <ol id="history__list">
+               <li>Первый пункт</li>
+               <li>Второй пункт</li>
+               <li>Третий пункт</li>
+            </ol>
          </div>
       </div>
    </div>

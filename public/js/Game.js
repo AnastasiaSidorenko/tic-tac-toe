@@ -1,21 +1,75 @@
 export class Game {
-   constructor(number, initiator) {
-      this.gameNumber = number;
-      this.whoMakeFirstStep = initiator;
+   //constructor(number, initiator, restart_button) {
+   constructor(restart_button) {
+      //this.gameNumber = number;
+      //this.whoMakeFirstStep = initiator;
       this.squares = Array(9).fill(null);
+      this.hideRestartButton(restart_button);
+   }
+
+   hideRestartButton(restart_button) {
+      restart_button.style.display = "none";
+   }
+
+   getSquares() {
+      return this.squares;
+   }
+
+   fillSquare(index, value) {
+      console.log("fillingSquare", index);
+      this.squares[index] = value;
    }
 
    getAvailableSquares() {
-      return this.squares.map((square, index) => {
-         if (square !== null) {
-            return index;
+      let availableSquares = [];
+      this.squares.map((square, index) => {
+         if (!square) {
+            availableSquares.push(index);
          }
       });
+      console.log("availableSquares", availableSquares);
+      return availableSquares;
    }
 
-   fillSquare(index) {
-      console.log("fillingSquare", index);
-      this.squares[index] = true;
+   getRandomSquareIndex() {
+      let availableSquares = this.getAvailableSquares();
+      console.log("available Squares", availableSquares);
+      let randomSquareIndex = availableSquares[this.getRandomNumber(availableSquares.length - 1)];
+      console.log(randomSquareIndex);
+      return randomSquareIndex;
+   }
+
+   getRandomNumber(n) {  // n - максимальное необходимое значение
+      return Math.floor(Math.random() * (n + 1));
+   };
+
+   areNotAllSquaresFilled() {
+      for (let i = 0; i < 9; i++) {
+         if (!this.squares[i]) {
+            return true;
+         }
+      }
+      return false;
+   }
+
+   calculateWinner() {
+      const lines = [
+         [0, 1, 2],
+         [3, 4, 5],
+         [6, 7, 8],
+         [0, 3, 6],
+         [1, 4, 7],
+         [2, 5, 8],
+         [0, 4, 8],
+         [2, 4, 6]
+      ];
+      for (let i = 0; i < lines.length; i++) {
+         const [a, b, c] = lines[i];
+         if (this.squares[a] && this.squares[a] === this.squares[b] && this.squares[a] === this.squares[c]) {
+            return this.squares[a];
+         }
+      }
+      return null;
    }
 
    /*sleep(ms) {
