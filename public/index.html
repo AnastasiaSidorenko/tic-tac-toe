@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/style.css">
+   <script type="module" src="js/app.js" defer></script>
+   <title>Крестики-нолики</title>
+</head>
+
+<body>
+   <div class="container">
+      <div class="game-info">Крестики-нолики</div>
+      <div class="game-space">
+
+         <div>
+            <div class="board-container">
+               <div class="board-row">
+                  <button class="square" id="0"></button>
+                  <button class="square" id="1"></button>
+                  <button class="square" id="2"></button>
+               </div>
+               <div class="board-row">
+                  <button class="square" id="3"></button>
+                  <button class="square" id="4"></button>
+                  <button class="square" id="5"></button>
+               </div>
+               <div class=" board-row">
+                  <button class="square" id="6"></button>
+                  <button class="square" id="7"></button>
+                  <button class="square" id="8"></button>
+               </div>
+            </div>
+            <button class="submit_button">Сыграть еще</button>
+         </div>
+
+         <div class="main-info">
+            <div class="final_count final_count__title">Итоговый счет <div class="final_count__values">
+                  <span class="user_count">0</span>
+                  : <span class="system_count">0</span></div> (Вы - Компьютер)
+            </div>
+            <div class="history">История игр</div>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>
