@@ -1,14 +1,10 @@
 export class Game {
    //constructor(number, initiator, restart_button) {
-   constructor(restart_button) {
+   constructor() {
       //this.gameNumber = number;
       //this.whoMakeFirstStep = initiator;
       this.squares = Array(9).fill(null);
-      this.hideRestartButton(restart_button);
-   }
-
-   hideRestartButton(restart_button) {
-      restart_button.style.display = "none";
+      // this.nodeSquares = document.getElementsByClassName("square");
    }
 
    getSquares() {
