@@ -1,4 +1,3 @@
-//import { Game } from "./Game.js"
 import { Controller } from "./Controller.js"
 
 let squares = document.getElementsByClassName("square"); //узлы клеток игрового поля
