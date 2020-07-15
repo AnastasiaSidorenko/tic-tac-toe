@@ -1,1 +1,1 @@
-# Tensor_course
+# Tic tac toe game
